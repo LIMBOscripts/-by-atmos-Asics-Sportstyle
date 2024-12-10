@@ -1,0 +1,36 @@
+-- Load Orion Library
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+
+-- Create a Window
+local Window = OrionLib:MakeWindow({
+    Name = "POGI YT ファントムチェイス by atmos & Asics Sportstyle",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest"
+})
+
+-- Add a Tab
+local MainTab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998", -- Replace with any valid asset ID if desired
+    PremiumOnly = false
+})
+
+-- Add a Button
+MainTab:AddButton({
+    Name = "Execute Script from tora is me ",
+    Callback = function()
+        -- Add the script you want to execute here
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/Asics"))()
+        -- Example action
+        OrionLib:MakeNotification({
+            Name = "Script Executed",
+            Content = "Your script was successfully executed.",
+            Image = "rbxassetid://4483345998", -- Replace with your desired image asset
+            Time = 5
+        })
+    end
+})
+
+-- Initialize Orion
+OrionLib:Init()
